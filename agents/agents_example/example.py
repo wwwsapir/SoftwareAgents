@@ -31,7 +31,6 @@ async def main() -> None:
         name="programmer_agent",
         model_client=OpenAIChatCompletionClient(
             model="gpt-4o-mini",
-            api_key="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",
         ),
         system_message="You are a programmer agent. You write great software code in any language asked.",
         # tools=[get_weather],

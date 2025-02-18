@@ -31,7 +31,7 @@ from agents.external_agents.industry_analyst_agent import IndustryAnalystAgent
 from agents.external_agents.integration_partner_agent import IntegrationPartnerAgent
 
 
-with open('./credentials_secret.txt', 'r') as cred_file:
+with open('../BizWandServer/credentials_secret.txt', 'r') as cred_file:
     content = cred_file.read()
     os.environ["OPENAI_API_KEY"] = content.split('\n')[0].split('=')[1]  # automatically used by the agents
 
