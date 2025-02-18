@@ -20,7 +20,7 @@ class UXUIDesignerAgent(BaseAgent):
             "A: 'Incorporate responsive layouts, interactive previews, and continuous user testing feedback.'"
         )
         # UX/UI Designer uses o3-mini (nontechnical)
-        model_client = OpenAIChatCompletionClient(model="o3-mini")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="UX/UI Designer", model_client=model_client, system_message=system_message)
 
     def design_interface(self) -> str:

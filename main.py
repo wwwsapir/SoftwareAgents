@@ -80,7 +80,7 @@ async def main():
     for agent in all_agents:
         comms.register_agent(agent)
 
-    # Optionally, set up inter-agent contacts (e.g., CEO communicates with VP agents)
+    # CEO communicates with all VP agents.
     ceo.contacts = {
         "VP Product": vp_product,
         "VP Technology": vp_technology,
@@ -88,8 +88,94 @@ async def main():
         "VP Operations/Compliance": vp_operations
     }
 
-    # Simulate process: CEO receives a command to build the MVP.
-    final_output = ceo.process_command("Build the MVP version of the product")
+    # VP Product communicates with:
+    vp_product.contacts = {
+        "Product Manager": product_manager,
+        # External feedback for product requirements:
+        "Retail Business Owner": retail_owner,
+        "Ecommerce Manager": ecommerce_manager,
+        "Digital Marketer": digital_marketer,
+        "Content Creator": content_creator,
+        "Merchandiser": merchandiser,
+        "Customer Experience Specialist": cx_specialist,
+        "CRM Manager": crm_manager,
+        "Industry Analyst": industry_analyst
+    }
+
+    # VP Technology determines integrations and communicates with technical agents:
+    vp_technology.contacts = {
+        "AI/ML Engineer": ai_ml_engineer,
+        "Backend Developer": backend_developer,
+        "Data Engineer": data_engineer,
+        "DevOps Engineer": devops_engineer,
+        "Frontend Developer": frontend_developer,
+        "UI/UX Designer": ux_ui_designer,
+        # External technical feedback:
+        "Integration Partner": integration_partner,
+        "IT Data Security Officer": it_security
+    }
+
+    # VP Marketing communicates with:
+    vp_marketing.contacts = {
+        "Marketing Specialist": marketing_specialist,
+        # External marketing feedback:
+        "Digital Marketer": digital_marketer,
+        "Content Creator": content_creator,
+        "CRM Manager": crm_manager
+    }
+
+    # VP Operations communicates with:
+    vp_operations.contacts = {
+        "QA Engineer": qa_engineer,
+        "Compliance Legal Advisor": compliance_legal,
+        # Also, IT Data Security Officer may be consulted here:
+        "IT Data Security Officer": it_security
+    }
+
+    # Product Manager communicates with external feedback (for generating product description, if needed):
+    product_manager.contacts = {
+        "Retail Business Owner": retail_owner,
+        "Ecommerce Manager": ecommerce_manager,
+        "Digital Marketer": digital_marketer,
+        "Content Creator": content_creator,
+        "Merchandiser": merchandiser,
+        "Customer Experience Specialist": cx_specialist,
+        "CRM Manager": crm_manager,
+        "Industry Analyst": industry_analyst
+    }
+
+    # Technical agents communicate with VP Technology and among themselves:
+    ai_ml_engineer.contacts = {"VP Technology": vp_technology, "Backend Developer": backend_developer}
+    backend_developer.contacts = {"VP Technology": vp_technology, "Data Engineer": data_engineer}
+    data_engineer.contacts = {"VP Technology": vp_technology, "Backend Developer": backend_developer}
+    devops_engineer.contacts = {"VP Technology": vp_technology}
+    frontend_developer.contacts = {"VP Technology": vp_technology, "UI/UX Designer": ux_ui_designer}
+    ux_ui_designer.contacts = {"VP Technology": vp_technology, "Frontend Developer": frontend_developer}
+
+    # QA and Compliance agents report to VP Operations:
+    qa_engineer.contacts = {"VP Operations/Compliance": vp_operations}
+    compliance_legal.contacts = {"VP Operations/Compliance": vp_operations}
+
+    # Marketing Specialist reports to VP Marketing:
+    marketing_specialist.contacts = {"VP Marketing": vp_marketing}
+
+    # External agents do not require outgoing contacts; they are feedback providers.
+
+    # Simulated Flows:
+    #
+    # Flow 1: Creating a product with a full description:
+    #   The CEO receives the full request and delegates immediately. (Simulated below)
+    #
+    # Flow 2: Creating a product without a full description:
+    #   The Product Manager (and VP Product) would generate a draft, consult external agents, iterate with user approval.
+    #
+    # Flow 3: Modifying current product plans:
+    #   The CEO delegates change requests to the relevant VPs, who then update their teams. QA and Compliance cycles follow,
+    #   and external feedback is solicited before final approval.
+    #
+
+    # For demonstration, we simulate Flow 1:
+    final_output = ceo.process_command("Build the MVP version of the product with a complete description.")
     print("\n=== Final Output ===")
     print(final_output)
 

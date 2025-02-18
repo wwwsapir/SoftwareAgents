@@ -19,7 +19,7 @@ async def main() -> None:
     weather_agent = AssistantAgent(
         name="product_agent",
         model_client=OpenAIChatCompletionClient(
-            model="gpt-4o-mini",
+            model="gpt-4o-mini-2024-07-18",
             api_key=openai_api_key,
         ),
         system_message="You are a product manager agent. You write and edit requirements and communicate with the programmers when needed.",
@@ -30,7 +30,7 @@ async def main() -> None:
     programmer_agent = AssistantAgent(
         name="programmer_agent",
         model_client=OpenAIChatCompletionClient(
-            model="gpt-4o-mini",
+            model="gpt-4o-mini-2024-07-18",
         ),
         system_message="You are a programmer agent. You write great software code in any language asked.",
         # tools=[get_weather],

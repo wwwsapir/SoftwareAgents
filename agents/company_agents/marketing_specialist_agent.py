@@ -20,7 +20,7 @@ class MarketingSpecialistAgent(BaseAgent):
             "A: 'Key metrics include NPS scores, engagement rates, churn rates, and direct survey feedback.'"
         )
         # Marketing Specialist uses o3-mini
-        model_client = OpenAIChatCompletionClient(model="o3-mini")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="Marketing Specialist", model_client=model_client, system_message=system_message)
 
     def develop_campaign(self) -> str:

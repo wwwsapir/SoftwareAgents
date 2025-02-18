@@ -20,7 +20,7 @@ class BackendDeveloperAgent(BaseAgent):
             "A: 'Utilize proper indexing, caching strategies, and optimize query logic to handle high concurrency.'"
         )
         # Backend Developer uses o3-mini-high
-        model_client = OpenAIChatCompletionClient(model="o3-mini-high")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="Backend Developer", model_client=model_client, system_message=system_message)
 
     def build_api(self) -> str:

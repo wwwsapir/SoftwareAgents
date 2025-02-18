@@ -19,8 +19,8 @@ class ContentCreatorAgent(BaseAgent):
             "Q: 'How can AI assist in maintaining brand consistency while being creative?'\n"
             "A: 'By training on brand guidelines and incorporating continuous feedback, AI can generate content that is both consistent and innovative.'"
         )
-        # Content Creator uses GPT-4o (external)
-        model_client = OpenAIChatCompletionClient(model="gpt-4o")
+        # Content Creator uses gpt-4o-mini (external)
+        model_client = OpenAIChatCompletionClient(model="gpt-4o-mini-2024-07-18")
         super().__init__(name="Content Creator", model_client=model_client, system_message=system_message)
 
     def advise_on_copy(self) -> str:

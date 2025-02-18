@@ -19,8 +19,8 @@ class IndustryAnalystAgent(BaseAgent):
             "Q: 'How can our product differentiate itself in a competitive market?'\n"
             "A: 'By focusing on deep personalization, seamless integrations, and robust ethical safeguards.'"
         )
-        # Industry Analyst uses GPT-4o (external)
-        model_client = OpenAIChatCompletionClient(model="gpt-4o")
+        # Industry Analyst uses gpt-4o-mini (external)
+        model_client = OpenAIChatCompletionClient(model="gpt-4o-mini-2024-07-18")
         super().__init__(name="Industry Analyst", model_client=model_client, system_message=system_message)
 
     def analyze_market(self) -> str:

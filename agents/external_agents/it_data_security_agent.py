@@ -19,8 +19,8 @@ class ITDataSecurityAgent(BaseAgent):
             "Q: 'How can we best ensure our data pipelines comply with GDPR?'\n"
             "A: 'Use data anonymization techniques, enforce strict access controls, and maintain thorough audit logs.'"
         )
-        # IT Data Security Officer uses GPT-4o (external)
-        model_client = OpenAIChatCompletionClient(model="gpt-4o")
+        # IT Data Security Officer uses gpt-4o-mini (external)
+        model_client = OpenAIChatCompletionClient(model="gpt-4o-mini-2024-07-18")
         super().__init__(name="IT Data Security Officer", model_client=model_client, system_message=system_message)
 
     def advise_security(self) -> str:

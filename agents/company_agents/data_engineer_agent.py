@@ -20,7 +20,7 @@ class DataEngineerAgent(BaseAgent):
             "A: 'Implement encryption, anonymization, and strict access controls while following GDPR guidelines.'"
         )
         # Data Engineer uses o3-mini-high
-        model_client = OpenAIChatCompletionClient(model="o3-mini-high")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="Data Engineer", model_client=model_client, system_message=system_message)
 
     def build_data_pipeline(self) -> str:

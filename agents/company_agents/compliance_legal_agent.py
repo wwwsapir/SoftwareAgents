@@ -20,7 +20,7 @@ class ComplianceLegalAgent(BaseAgent):
             "A: 'Include explainability features, regular bias audits, and clear disclosures about AI-generated content.'"
         )
         # Compliance and Legal Advisor uses o3-mini
-        model_client = OpenAIChatCompletionClient(model="o3-mini")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="Compliance Legal Advisor", model_client=model_client, system_message=system_message)
 
     def review_compliance(self) -> str:

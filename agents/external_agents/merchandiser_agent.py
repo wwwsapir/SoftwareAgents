@@ -19,8 +19,8 @@ class MerchandiserAgent(BaseAgent):
             "Q: 'How can our system help optimize product categorization?'\n"
             "A: 'By analyzing sales trends and customer behavior, the system can suggest optimized categorization that aligns with market trends.'"
         )
-        # Merchandiser uses GPT-4o (external)
-        model_client = OpenAIChatCompletionClient(model="gpt-4o")
+        # Merchandiser uses gpt-4o-mini (external)
+        model_client = OpenAIChatCompletionClient(model="gpt-4o-mini-2024-07-18")
         super().__init__(name="Merchandiser", model_client=model_client, system_message=system_message)
 
     def offer_insights(self) -> str:

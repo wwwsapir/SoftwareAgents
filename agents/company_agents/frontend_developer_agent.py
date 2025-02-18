@@ -19,8 +19,8 @@ class FrontendDeveloperAgent(BaseAgent):
             "Q: 'How can we make our content editor both powerful and easy to use?'\n"
             "A: 'Implement drag-and-drop elements, inline editing features, and a live preview mode to reflect changes instantly.'"
         )
-        # Frontend Developer uses o3-mini-high (technical)
-        model_client = OpenAIChatCompletionClient(model="o3-mini-high")
+        # Frontend Developer uses o3-mini
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="Frontend Developer", model_client=model_client, system_message=system_message)
 
     def build_ui(self) -> str:

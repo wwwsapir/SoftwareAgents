@@ -20,7 +20,7 @@ class QAEngineerAgent(BaseAgent):
             "A: 'Implement unit, integration, and regression tests that run automatically on each code push using tools like Jenkins or GitHub Actions.'"
         )
         # QA Engineer uses o3-mini-high
-        model_client = OpenAIChatCompletionClient(model="o3-mini-high")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="QA Engineer", model_client=model_client, system_message=system_message)
 
     def run_tests(self) -> str:

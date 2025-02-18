@@ -19,8 +19,8 @@ class CustomerExperienceAgent(BaseAgent):
             "Q: 'How can we make our interface more intuitive for everyday users?'\n"
             "A: 'Implement clear navigation, interactive guides, and immediate feedback on user actions.'"
         )
-        # Customer Experience Specialist uses GPT-4o (external)
-        model_client = OpenAIChatCompletionClient(model="gpt-4o")
+        # Customer Experience Specialist uses gpt-4o-mini (external)
+        model_client = OpenAIChatCompletionClient(model="gpt-4o-mini-2024-07-18")
         super().__init__(name="Customer Experience Specialist", model_client=model_client,
                          system_message=system_message)
 

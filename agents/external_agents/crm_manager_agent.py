@@ -19,8 +19,8 @@ class CRMManagerAgent(BaseAgent):
             "Q: 'How do you ensure seamless data exchange between platforms?'\n"
             "A: 'Standardizing data formats and implementing secure, well-documented APIs are key.'"
         )
-        # CRM Manager uses GPT-4o (external)
-        model_client = OpenAIChatCompletionClient(model="gpt-4o")
+        # CRM Manager uses gpt-4o-mini (external)
+        model_client = OpenAIChatCompletionClient(model="gpt-4o-mini-2024-07-18")
         super().__init__(name="CRM Manager", model_client=model_client, system_message=system_message)
 
     def provide_integration_feedback(self) -> str:

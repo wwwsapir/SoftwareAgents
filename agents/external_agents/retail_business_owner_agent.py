@@ -20,7 +20,7 @@ class RetailBusinessOwnerAgent(BaseAgent):
             "A: 'I require solutions with clear ROI and scalable pricing models that minimize upfront costs.'"
         )
         # Retail Business Owner uses o3-mini
-        model_client = OpenAIChatCompletionClient(model="o3-mini")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="Retail Business Owner", model_client=model_client, system_message=system_message)
 
     def provide_feedback(self) -> str:

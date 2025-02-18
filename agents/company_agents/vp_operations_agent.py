@@ -20,7 +20,7 @@ class VPOperationsAgent(BaseAgent):
             "A: 'Essential measures include encryption, token-based authentication, regular security audits, and strict access control.'"
         )
         # VP Operations uses o3-mini
-        model_client = OpenAIChatCompletionClient(model="o3-mini")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="VP Operations/Compliance", model_client=model_client, system_message=system_message)
 
     def define_operations(self) -> str:

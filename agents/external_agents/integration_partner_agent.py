@@ -19,8 +19,8 @@ class IntegrationPartnerAgent(BaseAgent):
             "Q: 'How can our product be designed to facilitate smooth integrations with external platforms?'\n"
             "A: 'By following industry-standard API protocols, offering detailed documentation, and providing dedicated support for integration efforts.'"
         )
-        # Integration Partner uses GPT-4o (external)
-        model_client = OpenAIChatCompletionClient(model="gpt-4o")
+        # Integration Partner uses gpt-4o-mini (external)
+        model_client = OpenAIChatCompletionClient(model="gpt-4o-mini-2024-07-18")
         super().__init__(name="Integration Partner", model_client=model_client, system_message=system_message)
 
     def advise_integration(self) -> str:

@@ -20,7 +20,7 @@ class DevOpsEngineerAgent(BaseAgent):
             "A: 'Integrate automated testing into your CI/CD pipeline, use Docker for consistent deployments, and leverage orchestration tools for environment consistency.'"
         )
         # DevOps Engineer uses o3-mini-high
-        model_client = OpenAIChatCompletionClient(model="o3-mini-high")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="DevOps Engineer", model_client=model_client, system_message=system_message)
 
     def deploy_infrastructure(self) -> str:

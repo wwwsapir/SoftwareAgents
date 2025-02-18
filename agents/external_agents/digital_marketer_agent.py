@@ -19,8 +19,8 @@ class DigitalMarketerAgent(BaseAgent):
             "Q: 'How do you measure the success of a digital campaign?'\n"
             "A: 'Metrics such as click-through rates, conversion rates, and overall ROI are key indicators.'"
         )
-        # Digital Marketer uses GPT-4o (external)
-        model_client = OpenAIChatCompletionClient(model="gpt-4o")
+        # Digital Marketer uses gpt-4o-mini (external)
+        model_client = OpenAIChatCompletionClient(model="gpt-4o-mini-2024-07-18")
         super().__init__(name="Digital Marketer", model_client=model_client, system_message=system_message)
 
     def analyze_campaign(self) -> str:

@@ -10,16 +10,22 @@ class BaseAgent(AssistantAgent):
     """
 
     def __init__(self, name, model_client, system_message, **kwargs):
-        super().__init__(name=name, model_client=model_client, system_message=system_message, **kwargs)
+        identifier_name = name.lower().replace(' ', '_')
+        super().__init__(name=identifier_name, model_client=model_client, system_message=system_message, **kwargs)
         self.contacts = {}  # For inter-agent communication.
         logging.basicConfig(level=logging.INFO)
+        self.conversation_history = []
 
-    def begin_session(self):
+    def begin_session(self, reset_history=False):
         """
         Resets the conversation history for a new session.
         """
-        self.reset()  # Reset the conversation history (AssistantAgent method)
+        if reset_history:
+            self.reset()  # Reset the conversation history
         logging.info(f"[{self.name}] BEGIN SESSION – Conversation reset and primed with system_message.")
 
     def end_session(self, message=""):
         logging.info(f"[{self.name}] END SESSION – {message}")
+
+    def reset(self):
+        self.conversation_history = []

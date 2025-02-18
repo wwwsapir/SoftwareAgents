@@ -20,7 +20,7 @@ class VPMarketingAgent(BaseAgent):
             "A: 'Customize messaging to highlight industry-specific benefits such as trend-driven content for fashion and technical reliability for electronics.'"
         )
         # VP Marketing uses o3-mini
-        model_client = OpenAIChatCompletionClient(model="o3-mini")
+        model_client = OpenAIChatCompletionClient(model="o3-mini-2025-01-31")
         super().__init__(name="VP Marketing", model_client=model_client, system_message=system_message)
 
     def create_marketing_plan(self) -> str:
