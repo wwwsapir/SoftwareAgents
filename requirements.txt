@@ -1,0 +1,8 @@
+# Requires Python 3.10 or later
+
+Flask==2.3.2
+flask_pymongo==0.5.2
+bcrypt==4.1.2
+Werkzeug==2.3.6
+autogen-agentchat==0.4.7
+autogen-ext[openai]==0.4.7
